@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [search, setSearch] = useState({ title: "", location: "" });
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -15,6 +16,10 @@ const Index = () => {
   const handleSearch = () => {
     // Implement search functionality here
     console.log("Searching for:", search);
+  };
+
+  const handleApply = () => {
+    navigate("/apply");
   };
 
   return (
@@ -60,6 +65,9 @@ const Index = () => {
                 <p className="mt-2">Brief description of the job.</p>
                 <Button variant="link" className="mt-4">
                   View Details
+                </Button>
+                <Button onClick={handleApply} className="mt-2">
+                  Apply Now
                 </Button>
               </CardContent>
             </Card>

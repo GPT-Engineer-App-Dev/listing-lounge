@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Home, Briefcase, Building, Info, Phone } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import JobPosting from "./pages/JobPosting.jsx";
+import JobApplication from "./pages/JobApplication.jsx";
 import Layout from "./layouts/navbar"; // Use the navbar layout
 import Index from "./pages/Index.jsx";
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
               <Route path="post-job" element={<JobPosting />} />
+              <Route path="apply" element={<JobApplication />} />
               {/* Add more routes here as needed */}
             </Route>
           </Routes>
